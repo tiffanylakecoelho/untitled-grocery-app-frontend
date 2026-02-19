@@ -60,14 +60,14 @@ export default function RecipesScreen() {
         <View style={styles.iconSpace}>
           <Image
               source={require("@/assets/images/icons/search-icon.svg")}
-              style={{ width: 24, height: 24 }}
+              style={styles.image}
             />
         </View>
         <Text style={styles.headerTitle}>Recipes</Text>
         <View style={styles.iconSpace}>
           <Image
               source={require("@/assets/images/icons/create-icon.svg")}
-              style={{ width: 24, height: 24 }}
+              style={styles.image}
             />
         </View>
       </View>
@@ -131,5 +131,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 44,
   },
+  image: {
+    width: 24,
+    height: 24
+  }
 });
 
