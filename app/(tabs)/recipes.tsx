@@ -1,5 +1,6 @@
 import { Image } from "expo-image";
-import { SectionList, StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Pressable, SectionList, StyleSheet, Text, View } from "react-native";
 
 const data = [
   {
@@ -53,6 +54,8 @@ const data = [
 ]
 
 export default function RecipesScreen() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -65,10 +68,12 @@ export default function RecipesScreen() {
         </View>
         <Text style={styles.headerTitle}>Recipes</Text>
         <View style={styles.iconSpace}>
-          <Image
-              source={require("@/assets/images/icons/create-icon.svg")}
-              style={styles.image}
-            />
+          <Pressable onPressOut={() => router.push('/create-recipe')}>
+            <Image
+                source={require("@/assets/images/icons/create-icon.svg")}
+                style={styles.image}
+              />
+          </Pressable>
         </View>
       </View>
 
